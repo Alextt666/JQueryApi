@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"> 
+
+    </script>
+</head>
+<body>
+    <ol>
+        <li class="item">我是ol的li</li>
+        <li>我是ol的li</li>
+        <li>我是ol的li</li>
+        <li>我是ol的li</li>
+        <li>我是ol的li</li>
+        <li>我是ol的li</li>
+    </ol>
+    <ul>
+        <li>我是ul的li</li>
+        <li>我是ul的li</li>
+        <li>我是ul的li</li>
+        <li>我是ul的li</li>
+        <li>我是ul的li</li>
+    </ul>
+    <div class="current">我有current</div>
+    <div>我没有current</div>
+    <script>
+        //1.兄弟元素 siblings 除了自身以外的所有亲兄弟；
+        $('ol .item').siblings('li').css('color','red')
+        //2.第N个元素
+        $('ul li:first').css('color','red');
+        $('ul li:eq(2)').css('color','red');
+        $('ul li').eq(3).css('color','blue')
+        //3.判断是否有雷鸣
+        console.log($('div:first').hasClass('current'));
+        console.log($('div:last').hasClass('current'));
+    </script>
+</body>
+</html>

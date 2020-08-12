@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js">
+    </script>
+</head>
+<body>
+    <div></div>
+    <script>
+        //1. DOM对象转换为JQUERY对象
+        //(1)直接获取对象 得到JQ对象
+        $('div');
+        //(2) 已经DOM获取了 ，转换JQ对象
+        var myDiv = document.querySelector('div');
+        $(myDiv);
+        console.dir(myDiv);
+        console.dir($(myDiv));
+        //2.JQ对象转换为DOM对象    用索引号在jq对象中 获取 DOM对象； 
+        console.dir($(myDiv)[0]);
+    </script>
+</body>
+</html>

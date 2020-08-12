@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"> 
+
+    </script>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+   <div class="yeye">
+       <div class="nav">
+           我是P
+           <p>我是pp</p>
+         <div class="no">
+            <p>1111</p>
+         </div>
+       </div>
+   </div>
+   <script>
+       //以下都是查找方法 一定要带括号
+       $(function(){
+           //1.父亲 parent()返回最近一级的父元素 亲爸爸
+           console.log($('.son').parent());
+       })
+       //2.儿子
+        // （1）亲儿子 children() 类似子代选择器 ul>li;
+        // 1. $('.nav>p').css('background','red');
+        // 2. $('.nav').children('p').css('background','red');
+        //  (2) 所有后代 find() 类似后代选择器 ul li;
+        // $('.yeye').find('p').css('backgroundColor','pink')
+   </script>
+</body>
+</html>

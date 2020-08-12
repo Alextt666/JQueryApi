@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li>六选一</li>
+        <li>六选一</li>
+        <li>六选一</li>
+        <li>六选一</li>
+        <li>六选一</li>
+        <li>六选一</li>
+    </ul>
+    <ol>
+        <li>五选一</li>
+        <li>五选一</li>
+        <li>五选一</li>
+        <li>五选一</li>
+        <li>五选一</li>
+    </ol>
+    <script>
+       $(function(){
+           $('ul li:first').css('backgroundColor','red'); // $(li:first) 获取第一个li元素 最后一个就把first改last；
+           $('ul li:eq(2)').css('backgroundColor','blue');//eq内填索引号
+           $('ol li:odd').css('background','skyblue');//奇数行
+           $('ol li:even').css('background','pink');//偶数行
+       })
+    </script>
+</body>
+</html>
