@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div{
+            margin: 100px auto;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            transition:all .5s;
+        }
+        .current{
+            background-color: red;
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        $(function(){
+            //1.添加类 addClass();
+            //2.移除类 removeClass();
+            //3.切换类（增加移除来回切换）toggleClass();
+            $('div').click(function(){
+                $(this).toggleClass('current');//不要加. 
+            })
+        })
+    </script>
+</body>
+</html>

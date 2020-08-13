@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        .wrap{
+            width: 600px;
+            height: 200px;
+            margin: 100px auto; 
+        }
+        .wrap,ul{
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+        }
+        ul{
+            width: 600px;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            line-height: 50px;
+            text-align: center;
+        }
+        ul li {
+            padding: 0 55px;
+            padding-right: 60px;
+            border-right: 1px solid #ccc;
+ 
+            
+        }
+      
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="tab-list">
+            <ul>
+                <li>详情</li>
+                <li>介绍</li>
+                <li>数据</li>
+                <li>售后</li>
+            </ul>
+        </div>
+        <div class="content">
+            <div>详情内容</div>
+            <div>介绍内容</div>
+            <div>数据内容</div>
+            <div>售后内容</div>
+        </div>
+    </div>
+</body>
+</html>

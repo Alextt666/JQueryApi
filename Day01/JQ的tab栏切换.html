@@ -1,120 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style type="text/css">
+    <script src="jquery.min.js"></script>
+    <style>
         * {
             margin: 0;
             padding: 0;
-            font-size: 12px;
         }
-        
-        ul {
+        li{
             list-style: none;
         }
-        
-        a {
-            text-decoration: none;
+        .wrap{
+            margin: 100px auto;
+            width: 800px;
+            height: 1050px;
+            border: 1px solid black;
         }
-        
-        .wrapper {
-            width: 250px;
-            height: 248px;
-            margin: 100px auto 0;
-            border: 1px solid pink;
-            border-right: 0;
-            overflow: hidden;
+        ul{
+            width: 100px;
+            height: 1050px;
+            background-color: pink;
         }
-        
-        #left,
-        #content {
+        .content{
+            width: 700px;
+            height: 1050px;
+        }
+        #left,.content{
             float: left;
         }
-        
-  
-        
-        #left li a {
-            display: block;
-            width: 48px;
-            height: 27px;
-            border-bottom: 1px solid pink;
-            line-height: 27px;
+        #left li {
+            width: 100%;
+            height: 210px;
             text-align: center;
-            color: black;
+            line-height: 210px;
+            font-size: 700;
+            border-bottom: 1px solid black;
         }
-        
-        #content {
-            border-left: 1px solid pink;
-            border-right: 1px solid pink;
+       
+        .content img {
+            display: none;
         }
     </style>
-    <script src="jquery.min.js"></script>
-    <script>
-        $(function() {
-            // 1. 鼠标经过左侧的小li 
-            $("#left li").mouseover(function() {
-                // 2. 得到当前小li 的索引号
-                var index = $(this).index();
-                console.log(index);
-                // 3. 让我们右侧的盒子相应索引号的图片显示出来就好了
-                // $("#content div").eq(index).show();
-                // 4. 让其余的图片（就是其他的兄弟）隐藏起来
-                // $("#content div").eq(index).siblings().hide();
-                // 链式编程
-                $("#content div").eq(index).show().siblings().hide();
-
-            })
-        })
-    </script>
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="wrap">
         <ul id="left">
-            <li><a href="#">女靴</a></li>
-            <li><a href="#">雪地靴</a></li>
-            <li><a href="#">冬裙</a></li>
-            <li><a href="#">呢大衣</a></li>
-            <li><a href="#">毛衣</a></li>
-            <li><a href="#">棉服</a></li>
-            <li><a href="#">女裤</a></li>
-            <li><a href="#">羽绒服</a></li>
-            <li><a href="#">牛仔裤</a></li>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li style="border: none;">5</li>
         </ul>
-        <div id="content">
-            <div>
-                <a href="#"><img src="images/01.jpg" width="200" height="250" /></a>
-            </div>
-            <div>
-                <a href="#"><img src="images/02.jpg" width="200" height="250" /></a>
-            </div>
-            <div>
-                <a href="#"><img src="images/冬裙.jpg" width="200" height="250" /></a>
-            </div>
-            <div>
-                <a href="#"><img src="images/呢大衣.jpg" width="200" height="250" /></a>
-            </div>
-            <div>
-                <a href="#"><img src="images/毛衣.jpg" width="200" height="250" /></a>
-            </div>
-            <div>
-                <a href="#"><img src="images/棉服.jpg" width="200" height="250" /></a>
-            </div>
-            <div>
-                <a href="#"><img src="images/女裤.jpg" width="200" height="250" /></a>
-            </div>
-            <div>
-                <a href="#"><img src="images/羽绒服.jpg" width="200" height="250" /></a>
-            </div>
-            <div>
-                <a href="#"><img src="images/牛仔裤.jpg" width="200" height="250" /></a>
-            </div>
-
+        <div class="content">
+            <img src="images/01.jpg" alt="#" style="display: block;">
+            <img src="images/02.jpg" alt="#" style="width: 700px;height: 1050px;">
+            <img src="images/03.jpg" alt="#">
+            <img src="images/04.jpg" alt="#">
+            <img src="images/05.jpg" alt="#">
         </div>
-
-
     </div>
+    <script>
+        $(function(){
+            //获取元素
+            $('#left li').mouseenter(function(){
+                //获取当前的li 索引号;
+                var index = $(this).index();
+                $(this).css('backgroundColor','red')
+                $(this).siblings().css('backgroundColor','pink')
+                $('.content img').eq(index).show();
+                $('.content img').eq(index).siblings().hide();
+            })
+            
+        })
+    </script>
 </body>
+
 </html>
