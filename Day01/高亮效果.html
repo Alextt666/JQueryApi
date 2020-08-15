@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: black;
+        }
+        .wrap{
+            width: 640px;
+            margin: 200px auto;
+            border: 1px solid white;
+        }
+        .wrap ul{
+            padding: 0;
+            width: 630px;
+            height: 392px;
+            margin: 5px;
+            display: flex;
+            flex-wrap: wrap;
+           
+        }
+        ul li {
+            width: 200px;
+            height: 186px;
+            list-style: none;
+            margin: 5px;
+            text-align: center;
+            line-height: 186px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <ul>
+            <li><img src="高亮images/01.jpg" alt=""></li>
+            <li><img src="高亮images/02.jpg" alt=""></li>
+            <li><img src="高亮images/03.jpg" alt=""></li>
+            <li><img src="高亮images/04.jpg" alt=""></li>
+            <li><img src="高亮images/05.jpg" alt=""></li>
+            <li><img src="高亮images/06.jpg" alt=""></li>
+        </ul>
+    </div>
+    <script>
+        $(function(){
+            //获取元素
+            $('ul li').hover(function(){
+                $(this).siblings().stop().fadeTo('fast',.5);
+            },function(){
+                $(this).siblings().stop().fadeTo('fast',1);
+            })
+        })
+    </script>
+</body>
+</html>

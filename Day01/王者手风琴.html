@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrap {
+            margin: 200px auto;
+            width: 1200px;
+            height: 497px;
+            background-image: url(王者images/bg.png);
+        }
+        li{
+            list-style: none;
+        }
+        ul{
+            width: 1200px;
+            height: 497px;
+        }
+        ul li{
+            width: 69px;
+            height: 69px;
+            position: relative;
+            float: left;
+            overflow: hidden;
+        }
+        ul li .small{
+            width: 69px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+       
+        
+        .king li.current .big {
+            display: block;
+        }
+        
+        .king li.current .small {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <ul>
+            <li><a><img src="王者images/c.png" alt="" class="big"><img src="王者images/c1.jpg" alt="" class="small"></a></li>
+            <li><a><img src="王者images/m.png" alt="" class="big"><img src="王者images/m1.jpg"  alt="" class="small"></a></li>
+            <li><a><img src="王者images/t.png" alt="" class="big"><img src="王者images/t1.jpg" alt="" class="small"></a></li>
+            <li><a><img src="王者images/h.png" alt="" class="big"><img src="王者images/h1.jpg" alt="" class="small"></a></li>
+            <li><a><img src="王者images/w.png" alt="" class="big"><img src="王者images/w1.jpg" alt="" class="small"></a></li>
+            <li><a><img src="王者images/z.png" alt="" class="big"><img src="王者images/z1.jpg" alt="" class="small"></a></li>
+        </ul>
+    </div>
+    <script>
+        $(function(){
+            //获取元素 鼠标经过li的时候 首先 当前li变宽 224px  li内的大图片淡出 小图片淡入
+            $('.wrap ul li').mouseenter(function(){
+                $(this).stop().animate({
+                    width:224
+                },300).find('.small').stop().fadeOut().siblings('.big').stop().fadeIn();
+                //其他的li 变小69px 
+                $(this).siblings('li').stop().animate({width:69},300).find('.small').stop().fadeIn().siblings('.big').stop().fadeOut();
+            })
+
+        })
+    </script>
+</body>
+
+</html>

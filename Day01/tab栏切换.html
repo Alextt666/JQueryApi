@@ -17,34 +17,48 @@
             width: 600px;
             height: 200px;
             margin: 100px auto; 
-        }
-        .wrap,ul{
             border: 1px solid #ccc;
-            border-collapse: collapse;
+            border-radius: 5px;
         }
         ul{
             width: 600px;
             height: 50px;
             display: flex;
             justify-content: space-between;
+            background-color: #666666;
             line-height: 50px;
             text-align: center;
+            border-bottom: 1px solid red;
+            border-radius: 5px;
         }
         ul li {
+            margin: 0;
             padding: 0 55px;
             padding-right: 60px;
-            border-right: 1px solid #ccc;
- 
-            
+            cursor: pointer;
+            border-radius: 5px;
         }
-      
+        ul li:last-child{
+            border-right: none;
+        }
+        
+        .content div{
+            float: left;
+            display: none;
+        }
+        .content div:first-child{
+            display: block;
+        }
+        .current{
+            background-color: #E4393C;
+        }
     </style>
 </head>
 <body>
     <div class="wrap">
         <div class="tab-list">
             <ul>
-                <li>详情</li>
+                <li class="current">详情</li>
                 <li>介绍</li>
                 <li>数据</li>
                 <li>售后</li>
@@ -57,5 +71,15 @@
             <div>售后内容</div>
         </div>
     </div>
+    <script>
+        $(function(){
+            var lis = $('.tab-list li')
+            lis.click(function(){
+                $(this).addClass('current').siblings().removeClass('current');
+                var index = $(this).index();
+                $('.content div').eq(index).show().siblings().hide();
+            })
+        })
+    </script>
 </body>
 </html>
