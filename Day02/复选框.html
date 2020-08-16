@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div>全选<input type="checkbox" name="" id="checkall"></div>
+    <div>商品1<input type="checkbox" name="" id="" class="j-checkbox"></div>
+    <div>商品2<input type="checkbox" name="" id="" class="j-checkbox"></div>
+    <div>商品3<input type="checkbox" name="" id="" class="j-checkbox"></div>
+    <script>
+        $(function () {
+            //   获取全选按钮的状态
+            $('#checkall').change(function () {
+                $('.j-checkbox').prop('checked', $(this).prop('checked'));
+            });
+            //当选中的商品个数等于总长度 全选按钮被选中
+            $('.j-checkbox').change(function () {
+                if($('.j-checkbox:checked').length === $('.j-checkbox').length){
+                    $('#checkall').prop('checked',true);
+                }
+                else {
+                    $('#checkall').prop('checked',false);
+                }
+            })
+        })
+    </script>
+
+</body>
+
+</html>
