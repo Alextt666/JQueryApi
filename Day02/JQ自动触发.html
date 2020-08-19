@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        $(function(){
+            //自动触发事件 
+            //先绑定一个事件
+            $('div').click(function(){
+                $(this).css('backgroundColor','red');
+                alert(11);
+            })
+            //三种触发方式
+            //1.元素.事件()；会触发元素默认事件
+            // $('div').click();
+            //2.元素.trigger('事件');
+            // $('div').trigger('click'); 会触发元素默认事件
+            //3.元素.triggerHandler('事件') ; 不会触发默认时间
+            $('div').triggerHandler('click')
+        })
+    </script>
+</body>
+</html>

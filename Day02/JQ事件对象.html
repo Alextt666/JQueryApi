@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        $(function(){
+            //给document 绑定事件
+            $(document).on('click',function(){
+                console.log('我是document');
+            })
+            // 给div绑定事件
+            $('div').on('click',function(e){
+                console.log('我是div');
+                //添加一个组织冒泡  则document不会执行
+                e.stopPropagation();//返回结果只有div没有document
+            })
+        })
+    </script>
+</body>
+</html>

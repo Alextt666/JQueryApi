@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+<script>
+    $(function(){
+        var arr = ['green','red','yellow']
+        // each方法遍历元素  方法内两个参数 分别是 索引号 和 DOM元素
+        //主要针对是DOM内元素
+        $('div').each(function(index,domEle){
+            console.log(index);//自动排序 打印所有的索引号
+            console.log(domEle);//返回的是DOM元素 
+            $(domEle).css('color',arr[index])
+        })
+
+        //$.each()方法遍历 主要用于遍历数据 处理数据
+        //也可以遍历对象
+        $.each(arr,function(i,ele){
+            console.log(i);
+            console.log(ele);
+        })
+    })
+</script>
+</body>
+</html>

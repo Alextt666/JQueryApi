@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li>我是原来的Li</li>
+    </ul>
+    <div class="test">我是原来的DIV</div>
+    <script>
+        $(function(){
+            //1.创建元素
+            var li = $('<li>我是后来的Li</li>');
+            //将创建的元素添加
+            //2.内部添加 
+            //(1) append
+            $('ul').append(li);//在后面生成 相当于原生的appendChild
+            //(2) prepend
+            $('ul').prepend(li);//在前面生成
+            //3.外部添加
+            var div = $('<div>我是新生成的div</div>');
+            $('.test').before(div);
+            $('.test').after(div);
+
+            //4.删除元素 remove()
+            // $('ul').remove(); //ul被移除了
+            // $('ul').empty();// 清除里面的子元素
+            //$('ul').html('');//清空里面的HTML内容
+        })
+    </script>
+</body>
+</html>

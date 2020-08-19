@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: blueviolet;
+        }
+        .current{
+            background-color: brown;
+        }
+    </style>
+</head>
+<body>
+    <div>123</div>
+    <ul>
+        <li>s</li>
+        <li>s</li>
+        <li>s</li>
+        <li>s</li>
+        <li>s</li>
+        <li>s</li>
+    </ul>
+    <script>
+        $(function(){
+            //绑定不同事件  记得用逗号隔开
+            $('div').on({
+                mouseenter:function(){
+                    $(this).css('color','red');
+                },
+                mouseleave:function(){
+                    $(this).css('color','green');
+                }
+            })
+            // 绑定相同事件 
+            $('div').on('mouseenter mouseleave',function(){
+                $(this).toggleClass('current')
+            })
+            //可以使用 事件委托
+            $('ul').on('click','li',function(){
+                alert('hello world')
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="jquery.min.js"></script>
+
+<body>
+    <div class="one">
+        <div class="two">
+            <div class="three">
+                <div class="four">我是崽</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(function () {
+        //可以使用parents() 来返回指定的祖先元素
+        console.log( $('.four').parents())//返回所有的祖先元素
+        console.log( $('.four').parents('.one')) //返回one 这个祖先元素
+
+
+        //toFixed()可以选择保留几位小数 
+        function countNum(a,b){
+            var p = (a+b).toFixed(2);
+            return p ;
+        }
+       var numRe = countNum(11.2,22.44);
+        console.log(numRe);
+    })
+</script>
+</html>
